@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>live TV</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div class="nav">
+        <div class="navigation">
+            <p class="logo">SportX</p>
+            <i style="font-size:24px; margin-right: 15px;" class="fa">&#xf004;</i>
+        </div>
+     
+
+        <div class="nav-btn">
+            <button>ALL</button>
+            <button>Live Now</button>
+            <button>Upcoming</button>
+        </div>
+    </div>
+
+
+<div class="body-content">
+
+
+    <div class="container">
+        <div class="para">
+            <p>Bangladesh VS India T20</p>
+        </div>
+            
+        <div class="content">
+            <div id="clock">00:00:00</div> 
+            <div class="vr-line"></div>
+            <div class="content-team">
+                <div class="team-1">
+                    <img src="https://flagdownload.com/wp-content/uploads/Flag_of_Bangladesh_Flat_Round.png" class="t-img">
+                    <p>BD</p>
+                </div>
+
+                <div class="team-2">
+                    <img src="https://img.freepik.com/premium-vector/flag-india-round-icon-banner-vector-illustration_622428-10106.jpg?semt=ais_hybrid" class="t-img">
+                    <p>IN</p>
+                </div>
+            </div>
+            <div class="vr-line"></div>
+            <div class="live">
+                <div class="blinking-text">Live</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    function updateClock() {
+      // Get the current time
+      var now = new Date();
+      
+      // Extract hours, minutes, and seconds
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+
+      // Format time to always be 2 digits (e.g., 09:05:08)
+      hours = hours < 10 ? '0' + hours : hours;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+
+      // Update the clock's HTML content
+      document.getElementById('clock').innerHTML = hours + ':' + minutes + ':' + seconds;
+    }
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+
+    // Initialize the clock when the page loads
+    updateClock();
+  </script>
+
+</html>
